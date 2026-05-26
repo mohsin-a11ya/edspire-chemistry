@@ -331,7 +331,7 @@ export default function App() {
       shuffledAnswer: shifted.findIndex(item => item.index === q.answer)
     };
   }, [qIndex]);
-  const answered = answers[qIndex];
+const answered = answers[qIndex as keyof typeof answers];
   const score = Object.values(answers).filter(a => a.correct).length;
   const attempted = Object.keys(answers).length;
   const pressure = Math.max(0, Math.round((time / 30) * 100));
@@ -647,3 +647,7 @@ function Panel({ title, icon, children }) {
 function InfoCard({ title, body }) {
   return <div className="rounded-2xl border border-[#f4d6c4] p-4 dark:border-slate-700"><h3 className="flex items-center gap-2 font-bold text-[#8C0026]"><BookOpen className="h-4 w-4" />{title}</h3><p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{body}</p></div>;
 }
+git init
+git add .
+git commit -m "First Edspire Chemistry Website"
+https://github.com/mohsin-a11ya/edspire-chemistry.git
