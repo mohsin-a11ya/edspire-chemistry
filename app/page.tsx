@@ -332,7 +332,7 @@ export default function App() {
     };
   }, [qIndex]);
 const answered = answers[qIndex as keyof typeof answers];
-  const score = Object.values(answers).filter(a => a.correct).length;
+  const score = Object.values(answers).filter((a: any) => a.correct).length;
   const attempted = Object.keys(answers).length;
   const pressure = Math.max(0, Math.round((time / 30) * 100));
 
